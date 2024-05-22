@@ -1,13 +1,11 @@
 services:
   server:
     env_file:
-      - path: ./.env
+      - .env
     build:
       context: .
       network: host
     ports:
       - 8000:8000
     volumes:
-      - ./.data/static:/static
-      - ./.data/media:/media
-      - ./.data/db.sqlite3:/app/.data/db.sqlite3
+      - ./.data:/app/.data

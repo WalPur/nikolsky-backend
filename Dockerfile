@@ -21,6 +21,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 
 COPY . .
 
+RUN mkdir -p /app/.data
 RUN chown -R appuser:appuser /app
 RUN chown -R appuser:appuser /app/.data 
 USER appuser
