@@ -85,11 +85,14 @@ WSGI_APPLICATION = "src.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / ".data" / "db.sqlite3",
+        "ENGINE": env("POSTGRES_ENGINE", default="django.db.backends.sqlite3"),  # type: ignore
+        "NAME": env("POSTGRES_DB", default="db.sqlite3"),  # type: ignore
+        "USER": env("POSTGRES_USER", default="admin"),  # type: ignore
+        "PASSWORD": env("POSTGRES_PASSWORD", default="Password"),  # type: ignore
+        "HOST": env("POSTGRES_HOST", default="postgresql"),  # type: ignore
+        "PORT": env("POSTGRES_PORT", default=5432),  # type: ignore
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
