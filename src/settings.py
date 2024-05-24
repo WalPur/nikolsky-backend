@@ -26,6 +26,10 @@ DEBUG = env("DEBUG")
 
 ALLOWED_HOSTS = ["*"]
 
+CSRF_TRUSTED_ORIGINS = env(
+    "ALLOWED_ORIGINS", default="http://localhost:3000"  # type: ignore
+).split()
+
 
 # Application definition
 
@@ -55,7 +59,7 @@ MIDDLEWARE = [
 ]
 
 CORS_ALLOWED_ORIGINS = env(
-    "CORS_ALLOWED_ORIGINS", default="http://localhost:3000"  # type: ignore
+    "ALLOWED_ORIGINS", default="http://localhost:3000"  # type: ignore
 ).split()
 
 
