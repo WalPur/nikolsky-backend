@@ -1,8 +1,8 @@
-from django.contrib import admin
+# from django.contrib import admin
 
-from .models import Feedback
+# from .models import Feedback
 
 
-@admin.register(Feedback)
-class FeedbackAdmin(admin.ModelAdmin):
-    list_display = ["id", "topic", "name"]
+# @admin.register(Feedback)
+# class FeedbackAdmin(admin.ModelAdmin):
+#     list_display = ["id", "topic", "name"]
